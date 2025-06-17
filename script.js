@@ -1,13 +1,15 @@
 function firstWord(str) {
-  // your code here
-	if (!str) return '';  // Handle empty or falsy input
+  if (!str) return ''; // handle empty input gracefully
 
-  const index = str.indexOf(' ');
+  const trimmedStr = str.trim(); // remove leading/trailing whitespace
+  const index = trimmedStr.indexOf(' ');
+
   if (index === -1) {
-    return str; // No space found, return whole string
+    return trimmedStr; // only one word present
   }
 
-  return str.slice(0, index);
+  return trimmedStr.slice(0, index);
+
 }
 
 // Do not change the code below
